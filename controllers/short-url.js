@@ -29,13 +29,6 @@ const goToUrl = async (req, res) => {
         },
       }
     );
-    //     {
-    //   $inc: { "user_activity.clicks": 1 },
-    //   $push: {
-    //     "user_activity.timestamps": `${Date.now()}}`,
-    //   },
-    // }
-    console.log(entry);
     res.redirect(entry.main_url);
   } catch (error) {
     console.error(error);
@@ -44,8 +37,8 @@ const goToUrl = async (req, res) => {
 };
 
 const getAllUrl = async (req, res) => {
-  const results = await short_url.find({});
-  return res.status(200).json(results);
+  // const results = await short_url.find({});
+  res.render("url");
 };
 
 module.exports = { createShortUrl, goToUrl, getAllUrl };
